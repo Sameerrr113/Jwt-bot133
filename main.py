@@ -19,7 +19,7 @@ def make_jwt(payload: dict) -> str:
 
 async def send(chat_id: int, text: str) -> None:
     async with httpx.AsyncClient(timeout=10) as client:
-        resp = await client.post(f"{TG_API}/sendMessage", json={"chat_id": chat_id, "text": text,})
+        resp = await client.post(f"{TG_API}/sendMessage", json={"chat_id": chat_id, "text": text})
         resp.raise_for_status()
 
 @app.post("/")
