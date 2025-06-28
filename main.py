@@ -38,13 +38,16 @@ async def webhook(req: Request):
         return {"ok": True}
 
     if text.lower().startswith(("/start", "/help")):
-        await send(chat_id,
-            "👋 *JWT Generator Bot*\n"
-            "Just send me any valid JSON. I’ll return a signed JWT.\n"
+    await send(
+        chat_id,
+        (
+            "👋 JWT Generator Bot\n"
+            "Send me any valid JSON and I'll return a signed JWT.\n"
             "Example:\n"
-            "`{"uid": "123", "role": "tester"}`"
+            '{"uid": "123", "role": "tester"}'
         )
-        return {"ok": True}
+    )
+    return {"ok": True}
 
     stripped = text.strip()
     if stripped.startswith("```"):
