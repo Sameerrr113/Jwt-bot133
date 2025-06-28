@@ -47,7 +47,9 @@ async def webhook(req: Request):
             '{"uid": "123", "role": "tester"}'
         )
     )
-    return {"ok": True}
+    return {"ok": True}'
+        )
+    )
 
     stripped = text.strip()
     if stripped.startswith("```"):
